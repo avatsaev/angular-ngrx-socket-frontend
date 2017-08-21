@@ -7,11 +7,11 @@ export interface State {
 
 export const INIT_STATE: State = {
   socketConnected: false
-}
+};
 
 
 
-export function reducer(state: State = INIT_STATE, {type, payload}: uiActions.All): State {
+export function reducer(state = INIT_STATE, {type, payload}: uiActions.All): State {
 
 
   switch (type) {

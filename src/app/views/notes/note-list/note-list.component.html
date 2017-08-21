@@ -1,7 +1,17 @@
-<a class="button is-success" (click)="addNote({username: 'username', body: 'Lorem dolor ipsum'})">
-  <span class="fa fa-plus"></span>
-  ADD
-</a>
+
+<div class="is-clearfix">
+
+  <a class="button is-success is-pulled-right"
+      (click)="addNote({
+        username: 'username',
+        body: 'Lorem dolor ipsum'
+      })"
+  >
+    <span class="fa fa-plus"></span>
+     ADD
+  </a>
+</div>
+
 <p class="has-text-centered">List of notes</p>
 
 

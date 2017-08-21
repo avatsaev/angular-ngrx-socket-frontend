@@ -16,6 +16,11 @@ import {
 declare const __karma__: any;
 declare const require: any;
 
+
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/filter';
+
 // Prevent Karma from running prematurely.
 __karma__.loaded = function () {};
 
