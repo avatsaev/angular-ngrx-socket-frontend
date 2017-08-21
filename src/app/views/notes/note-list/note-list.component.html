@@ -1,0 +1,16 @@
+<a class="button is-success" (click)="addNote({username: 'username', body: 'Lorem dolor ipsum'})">
+  <span class="fa fa-plus"></span>
+  ADD
+</a>
+<p class="has-text-centered">List of notes</p>
+
+
+
+<app-note-item
+        *ngFor=" let note of notes$ | async"
+        [note]="note"
+        (onNoteUpdated)="updateNote($event)"
+        (onNoteDeleted)="deleteNote($event)"
+>
+</app-note-item>
+

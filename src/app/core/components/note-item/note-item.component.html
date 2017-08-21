@@ -1,0 +1,25 @@
+<div  class="card">
+  <div class="card-header">
+    <p class="card-header-title">
+      @{{note.username}}
+    </p>
+
+  </div>
+  <div class="card-content">
+    <span *ngIf="!editMode" class="note-body">
+      {{note.body}}
+    </span>
+
+    <textarea class="textarea" *ngIf="editMode" [(ngModel)]="newNoteBody" >
+    </textarea>
+
+  </div>
+  <footer *ngIf="!editMode" class="card-footer">
+    <a class="card-footer-item" (click)="toggleEditMode()">Edit</a>
+    <a class="card-footer-item" (click)="deleteNote()">Delete</a>
+  </footer>
+  <footer *ngIf="editMode" class="card-footer">
+    <a class="card-footer-item" (click)="toggleEditMode()">Cancel</a>
+    <a class="card-footer-item" (click)="updateNote()">Save</a>
+  </footer>
+</div>

@@ -1,9 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {SocketService} from './core/services/socket.service';
+import {SharedModule} from './core/modules/shared.module';
+import {BrowserModule} from '@angular/platform-browser';
+import {CommonModule} from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -11,9 +14,10 @@ import {SocketService} from './core/services/socket.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
-  providers: [SocketService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

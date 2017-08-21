@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    children: []
-  }
+    path: 'notes',
+    loadChildren: 'app/views/notes/notes.module#NotesModule'
+  },
+  { path: '', redirectTo: '/notes', pathMatch: 'full' },
 ];
 
 @NgModule({

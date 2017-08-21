@@ -4,6 +4,7 @@
     <div class="nav-left">
       <a class="nav-item" routerLink="/">
         Angular Ngrx Socket
+        (<span></span>)
       </a>
     </div>
     <span class="nav-toggle">
@@ -24,37 +25,9 @@
 </nav>
 <section class="section">
   <div class="container content">
-    <a class="button is-success" (click)="addNote({username: 'avatsaev', body: 'Lorem dolor ipsum'})">
-      <span class="fa fa-plus"></span>
-      ADD
-    </a>
-    <p class="has-text-centered">List of notes</p>
-      <div class="box">
-
-
-        <div  *ngFor=" let note of notes$ | async" class="card">
-          <div class="card-header">
-            <p class="card-header-title">
-              @{{note.username}}
-            </p>
-
-          </div>
-          <div class="card-content">
-            {{note.body}}
-          </div>
-          <footer class="card-footer">
-            <a class="card-footer-item" (click)="updateNote(note)">Edit</a>
-            <a class="card-footer-item is-danger" (click)="deleteNote(note)">Delete</a>
-          </footer>
-        </div>
-      </div>
-
-
-
-
-    </div>
-
+    <router-outlet></router-outlet>
+  </div>
 
 </section>
 
-<router-outlet></router-outlet>
+
