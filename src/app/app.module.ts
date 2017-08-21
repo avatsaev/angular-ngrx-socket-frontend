@@ -10,6 +10,7 @@ import * as fromRoot from './core/store';
 import {environment} from '../environments/environment';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {SocketService} from './core/services/socket.service';
+import {EffectsModule} from '@ngrx/effects';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {SocketService} from './core/services/socket.service';
     AppRoutingModule,
     SharedModule,
     StoreModule.forRoot(fromRoot.reducers),
+    EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [SocketService],

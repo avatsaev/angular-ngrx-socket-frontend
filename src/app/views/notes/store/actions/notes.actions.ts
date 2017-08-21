@@ -4,6 +4,7 @@ import {Note} from '../../../../core/models/note';
 
 export const LIST_NOTES = '[Notes] List';
 export const NOTES_LISTED = '[Notes] Listed';
+export const POPULATE_NOTES = '[Notes] Populate';
 
 export const ADD_NOTE = '[Notes] Add';
 export const NOTE_ADDED = '[Notes] Added';
@@ -24,6 +25,11 @@ export class NotesListed implements Action {
   constructor(public payload?: {[id: string]: Note}) {}
 }
 
+export class PopulateNotes implements Action {
+  readonly type = POPULATE_NOTES;
+  constructor(public payload?: {[id: string]: Note}) {}
+}
+
 
 export class AddNote implements Action {
   readonly type = ADD_NOTE;
@@ -35,4 +41,4 @@ export class NoteAdded implements Action {
   constructor(public payload?: Note) {}
 }
 
-export type All = AddNote | NoteAdded | ListNotes | NotesListed;
+export type All = AddNote | NoteAdded | ListNotes | NotesListed | PopulateNotes;

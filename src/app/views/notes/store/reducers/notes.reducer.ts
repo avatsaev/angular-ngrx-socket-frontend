@@ -21,7 +21,7 @@ export function reducer(state = INIT_STATE, action: notesActions.All): State {
 
   switch (action.type) {
 
-    case notesActions.NOTES_LISTED : {
+    case notesActions.POPULATE_NOTES : {
 
       const ids = Object.keys(action.payload);
       return {

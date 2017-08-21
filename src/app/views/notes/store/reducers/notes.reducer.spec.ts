@@ -52,7 +52,7 @@ fdescribe('Notes state management', () => {
         }
       };
 
-      const action = new notesActions.NotesListed(notes);
+      const action = new notesActions.PopulateNotes(notes);
 
       const newState = fromNotes.reducer(state, action);
 

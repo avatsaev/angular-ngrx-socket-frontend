@@ -20,6 +20,10 @@ export class NotesService {
 
   }
 
+  listNotes() {
+    this.socket.emit('[Notes] List')
+  }
+
   addNote(note) {
     this.socket.emit('[Notes] Add', note);
   }
