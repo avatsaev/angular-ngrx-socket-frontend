@@ -4,7 +4,7 @@
     <div class="nav-left">
       <a class="nav-item" routerLink="/">
         Angular Ngrx Socket
-        (<span></span>)
+        (<span [ngClass]="socketStatus$ | async"></span>)
       </a>
     </div>
     <span class="nav-toggle">

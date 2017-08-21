@@ -23,6 +23,7 @@
     "@angular/router": "^4.3.5",
     "@ngrx/effects": "^4.0.5",
     "@ngrx/store": "^4.0.3",
+    "@ngrx/store-devtools": "^4.0.0",
     "bulma": "^0.5.1",
     "core-js": "^2.5.0",
     "font-awesome": "^4.7.0",
