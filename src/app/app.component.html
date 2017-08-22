@@ -4,7 +4,7 @@
     <div class="nav-left">
       <a class="nav-item" routerLink="/">
         Angular Ngrx Socket
-        (<span></span>)
+        (<span [ngClass]="socketStatus$ | async"></span>)
       </a>
     </div>
     <span class="nav-toggle">
@@ -13,12 +13,12 @@
         <span></span>
       </span>
     <div class="nav-right nav-menu">
-      <a class="nav-item is-tab is-active">
+      <a class="nav-item is-tab" routerLink="/notes" [routerLinkActive]="'is-active'">
         Notes
       </a>
-      <a class="nav-item is-tab">
-        Posts
-      </a>
+      <!--<a class="nav-item is-tab">-->
+        <!--Posts-->
+      <!--</a>-->
 
     </div>
   </div>

@@ -5,7 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {SharedModule} from './core/modules/shared.module';
 import {BrowserModule} from '@angular/platform-browser';
-import {CommonModule} from '@angular/common';
+import {StoreModule} from '@ngrx/store';
+import * as fromRoot from './core/store';
+import {environment} from '../environments/environment';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {SocketService} from './core/services/socket.service';
+import {EffectsModule} from '@ngrx/effects';
 
 
 @NgModule({
@@ -15,9 +20,12 @@ import {CommonModule} from '@angular/common';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forRoot(fromRoot.reducers),
+    EffectsModule.forRoot([]),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
-  providers: [],
+  providers: [SocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
