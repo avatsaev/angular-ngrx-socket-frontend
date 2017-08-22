@@ -27,7 +27,6 @@
     "bulma": "^0.5.1",
     "core-js": "^2.5.0",
     "font-awesome": "^4.7.0",
-    "lodash": "^4.17.4",
     "rxjs": "^5.4.3",
     "socket.io-client": "^2.0.3",
     "zone.js": "^0.8.16"
@@ -38,7 +37,6 @@
     "@angular/language-service": "^4.3.5",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
-    "@types/lodash": "^4.14.73",
     "@types/node": "~8.0.24",
     "@types/socket.io-client": "^1.4.29",
     "codelyzer": "~3.1.2",

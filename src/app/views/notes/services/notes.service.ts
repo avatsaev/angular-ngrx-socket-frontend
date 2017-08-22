@@ -13,15 +13,18 @@ export class NotesService {
   constructor(private socket: SocketService) {
 
     this.socket.join('notes');
+    // Every socket NOTES event has it's own observable, will be used by ngrx effects
     this.notesListed$ = this.socket.listen('[Notes] Listed');
-    this.noteAdded$ = this.socket.listen('[Note] Added');
-    this.noteUpdated$ = this.socket.listen('[Note] Updated');
-    this.noteDeleted$ = this.socket.listen('[Note] Deleted');
+    this.noteAdded$ = this.socket.listen('[Notes] Added');
+    this.noteUpdated$ = this.socket.listen('[Notes] Updated');
+    this.noteDeleted$ = this.socket.listen('[Notes] Deleted');
 
   }
 
+
+  // These methods will be called by ngrx effects (do not use directly in the components)
   listNotes() {
-    this.socket.emit('[Notes] List')
+    this.socket.emit('[Notes] List');
   }
 
   addNote(note) {

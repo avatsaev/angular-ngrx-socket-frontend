@@ -1,12 +1,13 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 import {Note} from '../../models/note';
 
 @Component({
   selector: 'app-note-item',
   templateUrl: './note-item.component.html',
-  styleUrls: ['./note-item.component.css']
+  styleUrls: ['./note-item.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NoteItemComponent implements OnInit, OnChanges {
+export class NoteItemComponent implements OnChanges {
 
   @Input() note: Note;
   newNoteBody: string;
@@ -17,9 +18,6 @@ export class NoteItemComponent implements OnInit, OnChanges {
   editMode = false;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
   ngOnChanges() {
     this.newNoteBody = this.note.body;

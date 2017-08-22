@@ -1,8 +1,10 @@
 
 import * as fromNotes from './notes.reducer';
 import * as notesActions from '../actions/notes.actions';
+import {Note} from '../../../../core/models/note';
 
 
+// TODO: remove f from fdescribe to enable the rest of the tests
 fdescribe('Notes state management', () => {
 
   let state: fromNotes.State;
@@ -52,7 +54,7 @@ fdescribe('Notes state management', () => {
         }
       };
 
-      const action = new notesActions.PopulateNotes(notes);
+      const action = new notesActions.NotesListed(notes);
 
       const newState = fromNotes.reducer(state, action);
 
@@ -96,6 +98,60 @@ fdescribe('Notes state management', () => {
       expect(newState.ids).toEqual(['a', 'b', 'c']);
     });
 
+    it('should update an existing note', () => {
+      const note: Note = {
+        id: 'b',
+        username: 'new name',
+        body: 'new body'
+      };
+
+      const action = new notesActions.NoteUpdated(note);
+
+      const newState = fromNotes.reducer(state, action);
+
+      expect(newState.ids.length).toEqual(2);
+      expect(newState.entities[note.id]).toEqual({
+        username: 'new name',
+        id: note.id,
+        body: 'new body'
+      });
+
+    });
+
+    it('should create an non existing note on update', () => {
+      const note: Note = {
+        id: 'd',
+        username: 'd',
+        body: 'd'
+      };
+
+      const action = new notesActions.NoteUpdated(note);
+
+      const newState = fromNotes.reducer(state, action);
+
+      expect(newState.ids.length).toEqual(3);
+      expect(newState.entities[note.id]).toEqual({
+        username: 'd',
+        id: note.id,
+        body: 'd'
+      });
+
+    });
+
+    it('should delete a note', () => {
+      const note = {
+        id: 'b',
+      } as Note;
+
+      const action = new notesActions.NoteDeleted(note);
+
+      const newState = fromNotes.reducer(state, action);
+
+      expect(newState.ids.length).toEqual(1);
+      expect(newState.entities[note.id]).toBeUndefined();
+    });
+
+
   });
 
 
@@ -124,6 +180,18 @@ fdescribe('Notes state management', () => {
     it('should select all entities array', () => {
       const slice = fromNotes.getEntitesArray(state);
       expect(slice.length).toEqual(2);
+      expect(slice).toEqual([
+        {
+          id: 'a',
+          username: 'user_a',
+          body: 'content a'
+        },
+        {
+          id: 'b',
+          username: 'b',
+          body: 'content b'
+        }
+      ]);
     });
 
   });

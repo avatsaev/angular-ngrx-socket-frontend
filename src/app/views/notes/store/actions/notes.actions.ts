@@ -2,18 +2,17 @@
 import {Action} from '@ngrx/store';
 import {Note} from '../../../../core/models/note';
 
-export const LIST_NOTES = '[Notes] List';
-export const NOTES_LISTED = '[Notes] Listed';
-export const POPULATE_NOTES = '[Notes] Populate';
+export const LIST_NOTES    = '[Notes] List'; // client -> socket server (side effect)
+export const NOTES_LISTED  = '[Notes] Listed';         // client -> store
 
-export const ADD_NOTE = '[Notes] Add';
-export const NOTE_ADDED = '[Notes] Added';
+export const ADD_NOTE      = '[Notes] Add';  // client -> socket server (side effect)
+export const NOTE_ADDED    = '[Notes] Added';          // client -> store
 
-export const UPDATE_NOTE = '[Notes] Update';
-export const NOTE_UPDATED = '[Notes] Updated';
+export const UPDATE_NOTE   = '[Notes] Update'; // same for the rest ...
+export const NOTE_UPDATED  = '[Notes] Updated';
 
-export const DELETE_NOTE = '[Notes] Delete';
-export const NOTE_DELETE = '[Notes] Deleted';
+export const DELETE_NOTE   = '[Notes] Delete';
+export const NOTE_DELETED  = '[Notes] Deleted';
 
 
 export class ListNotes implements Action {
@@ -25,13 +24,7 @@ export class NotesListed implements Action {
   constructor(public payload?: {[id: string]: Note}) {}
 }
 
-export class PopulateNotes implements Action {
-  readonly type = POPULATE_NOTES;
-  constructor(public payload?: {[id: string]: Note}) {}
-}
-
-
-export class AddNote implements Action {
+export class AddNoteOut implements Action {
   readonly type = ADD_NOTE;
   constructor(public payload?: Note) {}
 }
@@ -41,4 +34,32 @@ export class NoteAdded implements Action {
   constructor(public payload?: Note) {}
 }
 
-export type All = AddNote | NoteAdded | ListNotes | NotesListed | PopulateNotes;
+export class UpdateNoteOut implements Action {
+  readonly type = UPDATE_NOTE;
+  constructor(public payload?: Note) {}
+}
+
+export class NoteUpdated implements Action {
+  readonly type = NOTE_UPDATED;
+  constructor(public payload?: Note) {}
+}
+
+export class DeleteNoteOut implements Action {
+  readonly type = DELETE_NOTE;
+  constructor(public payload?: Note) {}
+}
+
+export class NoteDeleted implements Action {
+  readonly type = NOTE_DELETED;
+  constructor(public payload?: Note) {}
+}
+
+export type All =
+    ListNotes
+    | NotesListed
+    | AddNoteOut
+    | NoteAdded
+    | UpdateNoteOut
+    | NoteUpdated
+    | DeleteNoteOut
+    | NoteDeleted;

@@ -10,9 +10,7 @@ export const INIT_STATE: State = {
 };
 
 
-
 export function reducer(state = INIT_STATE, {type, payload}: uiActions.All): State {
-
 
   switch (type) {
     case uiActions.SET_SOCKET_CONECTED : {
@@ -23,7 +21,7 @@ export function reducer(state = INIT_STATE, {type, payload}: uiActions.All): Sta
     }
     default : return state;
   }
-}
 
+}
 
 export const getSocketStatus = (state: State): boolean => state.socketConnected;
