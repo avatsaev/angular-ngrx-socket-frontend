@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "angular-ngrx-socket-frontend"
+    "name": "git remote add origin git@github.com:avatsaev/angular-ngrx-socket-frontend.git"
   },
   "apps": [
     {
