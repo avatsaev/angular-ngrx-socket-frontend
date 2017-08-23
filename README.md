@@ -1,15 +1,23 @@
 # Angular Ngrx Socket.IO Example
 
-This Angular project demonstrates the implementation of real time application, with Socket.IO combined with Ngrx/Store library for single store management à la Redux, and Ngrx/Effects to mange the side effects.
+This Angular project demonstrates the implementation of real time application, with Socket.IO's asynchrnous 2-way event streams, combined with Ngrx/Store library for single store management à la Redux, and Ngrx/Effects to mange the side effects.
 
-Project's file structure:
+## Ngrx + Effects with a simple REST Service
+
+![](http://i.imgur.com/Ib40qmW.png)
+
+
+## Ngrx + Effect with Socket.IO
+
+![](http://i.imgur.com/F7k2Iyj.png)
+
+## Project's file structure:
+
 ![file structure](https://i.imgur.com/IbGUfzi.png)
 
-Application's central state tree:
+## Application's central state tree:
 
 ![](http://i.imgur.com/7DiuGH6.png)
-
-How real time state management works:
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
