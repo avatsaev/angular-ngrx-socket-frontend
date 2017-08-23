@@ -1,5 +1,9 @@
 # Angular Ngrx Socket.IO Example
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+
+
 This Angular project demonstrates the implementation of real time application, with Socket.IO's asynchrnous 2-way event streams, combined with Ngrx/Store library for single store management à la Redux, and Ngrx/Effects to mange the side effects.
 
 Backend available here: https://github.com/avatsaev/angular-ngrx-socket-backend
