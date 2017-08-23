@@ -6,7 +6,7 @@ Backend available here: https://github.com/avatsaev/angular-ngrx-socket-backend
 
 ## Ngrx + Effects with a simple REST Service
 
-![](http://i.imgur.com/Ib40qmW.png)
+![](http://i.imgur.com/bpIbJrd.png)
 
 
 ## Ngrx + Effect with Socket.IO
