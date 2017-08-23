@@ -2,6 +2,8 @@
 
 This Angular project demonstrates the implementation of real time application, with Socket.IO's asynchrnous 2-way event streams, combined with Ngrx/Store library for single store management à la Redux, and Ngrx/Effects to mange the side effects.
 
+Backend available here: https://github.com/avatsaev/angular-ngrx-socket-backend
+
 ## Ngrx + Effects with a simple REST Service
 
 ![](http://i.imgur.com/Ib40qmW.png)
