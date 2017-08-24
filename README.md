@@ -6,6 +6,8 @@
 
 This Angular project demonstrates the implementation of a simple real time Notes app, with Socket.IO's asynchrnous 2-way event streams, combined with Ngrx/Store library for single state management à la Redux, and Ngrx/Effects to mange the side effects.
 
+![](http://i.imgur.com/IUArcBH.gif)
+
 Backend available here: https://github.com/avatsaev/angular-ngrx-socket-backend
 
 ## Ngrx + Effects with a simple REST Service
