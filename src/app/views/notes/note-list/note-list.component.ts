@@ -27,18 +27,18 @@ export class NoteListComponent implements OnInit {
   }
 
   addNote(note: Note) {
-    this.store.dispatch(new notesActions.AddNoteOut(note));
+    this.store.dispatch(new notesActions.AddNote(note));
   }
 
 
   updateNote(note: Note) {
-    this.store.dispatch(new notesActions.UpdateNoteOut(note));
+    this.store.dispatch(new notesActions.UpdateNote(note));
   }
 
   deleteNote(note: Note) {
     const r = confirm('Are you sure?');
     if (r) {
-      this.store.dispatch(new notesActions.DeleteNoteOut(note));
+      this.store.dispatch(new notesActions.DeleteNote(note));
     }
 
   }

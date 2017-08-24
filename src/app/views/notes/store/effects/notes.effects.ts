@@ -29,7 +29,7 @@ export class NotesEffects {
   @Effect({dispatch: false})
   addNote$ = this.actions$
       .ofType(notesActions.ADD_NOTE)
-      .map((action: notesActions.AddNoteOut) => action.payload)
+      .map((action: notesActions.AddNote) => action.payload)
       .do((note) => this.notesService.addNote(note));
 
   @Effect()
@@ -42,7 +42,7 @@ export class NotesEffects {
   @Effect({dispatch: false})
   updateNote$ = this.actions$
       .ofType(notesActions.UPDATE_NOTE)
-      .map((action: notesActions.UpdateNoteOut) => action.payload)
+      .map((action: notesActions.UpdateNote) => action.payload)
       .do((note) => this.notesService.updateNote(note));
 
   @Effect()
@@ -55,7 +55,7 @@ export class NotesEffects {
   @Effect({dispatch: false})
   deleteNote$ = this.actions$
       .ofType(notesActions.DELETE_NOTE)
-      .map((action: notesActions.UpdateNoteOut) => action.payload)
+      .map((action: notesActions.UpdateNote) => action.payload)
       .do((note) => this.notesService.deleteNote(note));
 
   @Effect()

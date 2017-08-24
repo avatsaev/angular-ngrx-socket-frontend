@@ -24,7 +24,7 @@ export class NotesListed implements Action {
   constructor(public payload?: {[id: string]: Note}) {}
 }
 
-export class AddNoteOut implements Action {
+export class AddNote implements Action {
   readonly type = ADD_NOTE;
   constructor(public payload?: Note) {}
 }
@@ -34,7 +34,7 @@ export class NoteAdded implements Action {
   constructor(public payload?: Note) {}
 }
 
-export class UpdateNoteOut implements Action {
+export class UpdateNote implements Action {
   readonly type = UPDATE_NOTE;
   constructor(public payload?: Note) {}
 }
@@ -44,7 +44,7 @@ export class NoteUpdated implements Action {
   constructor(public payload?: Note) {}
 }
 
-export class DeleteNoteOut implements Action {
+export class DeleteNote implements Action {
   readonly type = DELETE_NOTE;
   constructor(public payload?: Note) {}
 }
@@ -57,9 +57,9 @@ export class NoteDeleted implements Action {
 export type All =
     ListNotes
     | NotesListed
-    | AddNoteOut
+    | AddNote
     | NoteAdded
-    | UpdateNoteOut
+    | UpdateNote
     | NoteUpdated
-    | DeleteNoteOut
+    | DeleteNote
     | NoteDeleted;
