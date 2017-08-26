@@ -20,7 +20,7 @@ export class SocketService {
 
   join(room: string) {
     // auto rejoin after reconnect mechanism
-    this.connected$.filter(Boolean).subscribe(connected => {
+    this.connected$.subscribe(connected => {
       if (connected) {
         this.socket.emit('join', {room});
       }
