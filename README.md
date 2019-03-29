@@ -1,4 +1,11 @@
-# Angular Ngrx Socket.IO Example
+-----------------
+
+# This repository is no longer maintained, please refer to https://github.com/avatsaev/angular-contacts-app-example 
+
+--------------
+
+
+## Angular Ngrx Socket.IO Example
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
